@@ -530,7 +530,17 @@ public class OutputChoice extends javax.swing.JFrame {
 
     private void BalanceInquiryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BalanceInquiryActionPerformed
         switchToPanel("cardBalanceInquiry");
-        balanceInquiryTextField.setText(Double.toString(pb.balance));
+        String sql = "SELECT * FROM `customer_statement`";
+        ResultSet rs;
+        try {
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                balanceInquiryTextField.setText(Double.toString(rs.getDouble("balance")));
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(OutputChoice.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BalanceInquiryActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

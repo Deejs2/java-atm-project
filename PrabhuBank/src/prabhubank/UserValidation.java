@@ -294,7 +294,7 @@ public class UserValidation extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardNumberValidationPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(cardNumberValidationPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cardNumberTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(cardNumberTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
                     .addComponent(cardValidationError2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(182, 182, 182))
         );
@@ -305,9 +305,9 @@ public class UserValidation extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cardNumberTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(cardValidationError2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(cardNumberBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
@@ -325,6 +325,7 @@ public class UserValidation extends javax.swing.JFrame {
         });
 
         cardValidationError3.setForeground(new java.awt.Color(204, 0, 51));
+        cardValidationError3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout cardNumberValidationPanel3Layout = new javax.swing.GroupLayout(cardNumberValidationPanel3);
         cardNumberValidationPanel3.setLayout(cardNumberValidationPanel3Layout);
@@ -335,15 +336,15 @@ public class UserValidation extends javax.swing.JFrame {
                 .addComponent(cardNumberBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(272, 272, 272))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardNumberValidationPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cardValidationError3, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182))
+                .addContainerGap()
+                .addComponent(cardValidationError3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         cardNumberValidationPanel3Layout.setVerticalGroup(
             cardNumberValidationPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardNumberValidationPanel3Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(cardValidationError3)
+                .addGap(77, 77, 77)
+                .addComponent(cardValidationError3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(cardNumberBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
@@ -394,14 +395,15 @@ public class UserValidation extends javax.swing.JFrame {
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(UserValidation.class.getName()).log(Level.SEVERE, null, ex);
             }
+            dispose();
             
         }else{
-            cardValidationError.setText("Please Enter a Valid PIN Number!");
+            PinValidationError.setText("Please Enter a Valid PIN Number!");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void cardNumberBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardNumberBtn1ActionPerformed
-        if(pb.cardNumber.equals(cardNumberTextField.getText())){
+        if(pb.cardNumber.equals(cardNumberTextField1.getText())){
             switchToPanel("cardPinValidation");
         }else{
             switchToPanel("cardNumberBtn2Card");
@@ -410,7 +412,7 @@ public class UserValidation extends javax.swing.JFrame {
     }//GEN-LAST:event_cardNumberBtn1ActionPerformed
 
     private void cardNumberBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardNumberBtn2ActionPerformed
-        if(pb.cardNumber.equals(cardNumberTextField.getText())){
+        if(pb.cardNumber.equals(cardNumberTextField2.getText())){
             switchToPanel("cardPinValidation");
         }else{
             switchToPanel("cardNumberBtn3Card");
